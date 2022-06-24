@@ -25,7 +25,7 @@
         lab.frame =CGRectMake(0, 0, width, HUGE);
     }
     lab.numberOfLines = 0 ;
-    lab.font = [UIFont systemFontOfSize:15];
+    lab.font = [UIFont systemFontOfSize:font];
     lab.text = self;
     [lab sizeToFit];
     return lab.frame.size;
