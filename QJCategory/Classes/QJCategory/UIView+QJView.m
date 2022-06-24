@@ -82,4 +82,12 @@
     self.frame = frame;
 }
 
+#pragma mark 控件切圆角
+-(void)cutViewRounded:(CGFloat)radius andRoundingCorners:(UIRectCorner)corners{
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:corners cornerRadii:CGSizeMake(radius, radius)];
+    CAShapeLayer *layer = [CAShapeLayer layer];
+    layer.path = path.CGPath;
+    self.layer.mask = layer;
+}
+
 @end

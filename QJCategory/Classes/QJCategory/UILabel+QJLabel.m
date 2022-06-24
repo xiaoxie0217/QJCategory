@@ -41,4 +41,11 @@
     }
     return size;
 }
+#pragma mark 给label画横线
+-(void)addLineInLabel:(NSString *)str andStyle:(NSUnderlineStyle)style{
+    NSMutableAttributedString *old_attStr = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@",str]];
+    [old_attStr addAttribute:NSStrikethroughStyleAttributeName value:[NSNumber numberWithInteger:style] range:NSMakeRange(0, [NSString stringWithFormat:@"%@",str].length)];
+    self.attributedText = old_attStr;
+}
+
 @end

@@ -6,7 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "QJCategory.h"
+#import "QJHeader.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UILabel (QJLabel)
@@ -27,6 +27,12 @@ NS_ASSUME_NONNULL_BEGIN
  direction :获取的是高/宽(当获取 label 的高度时候,XIB需要提前规定 label 的宽度,要不会按照当前 XIB 的宽度来计算高度)
  */
 -(CGSize)adaptiveLabel:(NSString *)text direction:(direction)direction;
+/**
+ 给label画横线
+ str  需要画横线的字体
+ style  横线的样式 (iOS 自带的效果赋值)
+ */
+-(void)addLineInLabel:(NSString *)str andStyle:(NSUnderlineStyle)style;
 @end
 
 NS_ASSUME_NONNULL_END

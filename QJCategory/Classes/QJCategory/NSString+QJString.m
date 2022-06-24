@@ -16,7 +16,7 @@
     return [phoneTest evaluateWithObject:mobile];
 }
 
--(CGFloat)getlabeWidth:(UIFont *)font direction:(direction)direction width:(CGFloat)width{
+-(CGSize)adaptiveString:(CGFloat)font direction:(direction)direction width:(CGFloat)width{
     
     UILabel *lab = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, HUGE, HUGE)];
     if (direction == horizontal) {//宽度
@@ -25,9 +25,9 @@
         lab.frame =CGRectMake(0, 0, width, HUGE);
     }
     lab.numberOfLines = 0 ;
-    lab.font = font;
+    lab.font = [UIFont systemFontOfSize:15];
     lab.text = self;
     [lab sizeToFit];
-    return lab.frame.size.width;
+    return lab.frame.size;
 }
 @end
